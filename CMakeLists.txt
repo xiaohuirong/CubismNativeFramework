@@ -1,9 +1,14 @@
 cmake_minimum_required(VERSION 3.10)
+project("CubismFramework")
 
 set(LIB_NAME Framework)
+set(FRAMEWORK_SOURCE "OpenGL")
 
 # Force static library.
-add_library(${LIB_NAME} STATIC)
+add_library(${LIB_NAME} SHARED)
+
+find_package(CubismCore REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS OpenGLWidgets)
 
 add_subdirectory(src)
 
@@ -22,10 +27,13 @@ target_include_directories(${LIB_NAME}
 # Add core include.
 target_include_directories(${LIB_NAME}
   PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/../Core/include
+  ${CubismCore_INCLUDE_DIRS}
+  Qt6::OpenGLWidgets
 )
-# Add definitions.
-target_compile_definitions(${LIB_NAME}
+
+# Link the required libraries.
+target_link_libraries(${LIB_NAME}
   PRIVATE
-    ${FRAMEWORK_DEFINITIOINS}
+    Qt6::OpenGLWidgets
+    ${CubismCore_LIBRARIES}      # Link CubismCore libraries
 )

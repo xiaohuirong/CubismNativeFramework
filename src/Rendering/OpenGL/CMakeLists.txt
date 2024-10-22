@@ -6,4 +6,5 @@ target_sources(${LIB_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/CubismShader_OpenGLES2.hpp
     ${CMAKE_CURRENT_SOURCE_DIR}/CubismRenderer_OpenGLES2.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/CubismRenderer_OpenGLES2.hpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/openglhelper.hpp
 )

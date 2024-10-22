@@ -9,6 +9,7 @@
 
 #include "CubismFramework.hpp"
 #include "CubismRenderer_OpenGLES2.hpp"
+#include "openglhelper.hpp"
 
 #ifdef CSM_TARGET_ANDROID_ES2
 #include <jni.h>
@@ -23,8 +24,9 @@
 #endif
 
 #if defined(CSM_TARGET_WIN_GL) || defined(CSM_TARGET_LINUX_GL)
-#include <GL/glew.h>
-#include <GL/gl.h>
+//#include <GL/glew.h>
+//#include <GL/gl.h>
+#include <QOpenGLFunctions>
 #endif
 
 #ifdef CSM_TARGET_MAC_GL

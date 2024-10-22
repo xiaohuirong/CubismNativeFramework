@@ -12,6 +12,7 @@
 #include "Type/csmRectF.hpp"
 #include "Type/csmMap.hpp"
 #include <float.h>
+#include "openglhelper.hpp"
 
 #ifdef CSM_TARGET_ANDROID_ES2
 #include <jni.h>
@@ -26,8 +27,9 @@
 #endif
 
 #if defined(CSM_TARGET_WIN_GL) || defined(CSM_TARGET_LINUX_GL)
-#include <GL/glew.h>
-#include <GL/gl.h>
+//#include <GL/glew.h>
+//#include <GL/gl.h>
+#include <QOpenGLFunctions>
 #endif
 
 #ifdef CSM_TARGET_MAC_GL
